@@ -1,0 +1,14 @@
+# В репозитории только лендинг и то, что нужно для его работы.
+# Всё остальное (заявки, заметки, наставники, выступление, черновики) игнорируется.
+/*
+!/.gitignore
+!/index.html
+!/.nojekyll
+!/landing/
+/landing/*
+!/landing/index.html
+!/landing/web/
+!/landing/png/
+/landing/png/*
+!/landing/png/landing/
+.DS_Store
