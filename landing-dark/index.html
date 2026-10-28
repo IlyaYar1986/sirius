@@ -310,6 +310,10 @@ nav.top{background:rgba(7,7,7,.92);border-bottom-color:#1c1c1c;box-shadow:none}
 .qr-box a{color:#fff}
 .faq summary{text-transform:none}
 footer{color:#555;text-transform:uppercase;letter-spacing:.1em;font-size:.72rem}
+.ver-switch{margin-left:auto;position:sticky;right:0;z-index:1;background:var(--bg);display:flex;gap:2px;flex-shrink:0;padding:3px;border:1px solid var(--border);border-radius:8px;background:rgba(127,127,127,.08)}
+.ver-btn{padding:4px 10px;border-radius:6px;font-size:.72rem;font-weight:800;color:var(--muted);text-decoration:none;white-space:nowrap}
+.ver-btn:hover{color:var(--text)}
+.ver-btn.active{background:var(--text);color:var(--bg)}
 </style>
 </head>
 <body>
@@ -325,6 +329,10 @@ footer{color:#555;text-transform:uppercase;letter-spacing:.1em;font-size:.72rem}
   <a class="nav-link" href="#s6">Как устроена нейросеть</a>
   <a class="nav-link" href="#quiz">Квиз</a>
   <a class="nav-link" href="#faq">Вопросы</a>
+  <span class="ver-switch" role="group" aria-label="Версия оформления">
+    <a class="ver-btn" href="../landing/" data-ver-link>Яркая</a>
+    <a class="ver-btn active" href="../landing-dark/" data-ver-link>Тёмная</a>
+  </span>
 </nav>
 
 <header id="hero">
@@ -835,6 +843,11 @@ document.querySelectorAll(".game-pair").forEach((pair) => {
       pair.querySelectorAll("button").forEach((b) => { b.disabled = true; });
     });
   });
+});
+
+/* Переключатель версий: сохраняем текущий раздел */
+document.querySelectorAll("[data-ver-link]").forEach((link) => {
+  link.addEventListener("click", () => { link.href = link.getAttribute("href").split("#")[0] + location.hash; });
 });
 </script>
 </body>
