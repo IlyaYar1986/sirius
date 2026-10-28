@@ -11,4 +11,11 @@
 !/landing/png/
 /landing/png/*
 !/landing/png/landing/
+!/landing-dark/
+/landing-dark/*
+!/landing-dark/index.html
+!/landing-dark/web/
+!/landing-dark/png/
+/landing-dark/png/*
+!/landing-dark/png/landing/
 .DS_Store
