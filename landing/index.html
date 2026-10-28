@@ -3,6 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Два исследовательских проекта «Сириус.Лето»: как заставить нейросеть не врать. Эксперименты с GigaChat, программировать не обязательно.">
+<meta name="theme-color" content="#0a0f1f">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Сезон охотников за галлюцинациями">
+<meta property="og:description" content="Узнай, как заставить нейросеть не врать. Два проекта «Сириус.Лето», бесплатно, онлайн.">
+<meta property="og:url" content="https://ilyayar1986.github.io/sirius/landing/">
+<meta property="og:image" content="https://ilyayar1986.github.io/sirius/landing/png/landing/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23000'/%3E%3Ctext x='32' y='44' font-size='36' text-anchor='middle' fill='%23fff' font-family='Arial' font-weight='900'%3EИ%3C/text%3E%3C/svg%3E">
+<link rel="preload" as="image" href="png/landing/01_hero-800.webp" imagesrcset="png/landing/01_hero-800.webp 800w, png/landing/01_hero.webp 1600w" imagesizes="(max-width: 900px) 100vw, 1180px">
 <title>Сезон охотников за галлюцинациями</title>
 <!-- Рекламный лендинг к выступлению перед школьниками: два проекта «Сириус.Лето». Шаблон vebinar-longrid, тёмная игровая тема. -->
 <style>
@@ -41,7 +53,7 @@ body{
 /* NAV */
 nav.top{
   position:fixed;top:0;left:0;right:0;height:var(--nav-h);
-  background:rgba(255,255,255,.97);backdrop-filter:blur(12px);
+  background:rgba(255,255,255,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);box-shadow:0 1px 10px rgba(0,0,0,.06);
   display:flex;align-items:center;padding:0 20px;z-index:900;
   gap:2px;overflow-x:auto;scrollbar-width:none;
@@ -284,6 +296,12 @@ footer{color:var(--muted)}
 .ver-btn{padding:4px 10px;border-radius:6px;font-size:.72rem;font-weight:800;color:var(--muted);text-decoration:none;white-space:nowrap}
 .ver-btn:hover{color:var(--text)}
 .ver-btn.active{background:var(--text);color:var(--bg)}
+@supports (height:100svh){#hero{min-height:100svh}}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+img{max-width:100%}
+a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.game-btns button,.quiz-check,.copy-btn,.viz-fs,.ver-btn{min-height:40px}
+.quiz-options label,.checklist-items label{min-height:40px}
 </style>
 </head>
 <body>
@@ -318,7 +336,7 @@ footer{color:var(--muted)}
     <a class="cta-btn ghost" href="#s5">Что я получу</a>
   </div>
   <figure class="img-card hero-img" data-lightbox>
-    <img src="png/landing/01_hero.png" alt="Экран выбора режима: «Честный ИИ» и «ИИ-аудитор»" loading="lazy" onerror="this.closest('.img-card').classList.add('img-missing')">
+    <img src="png/landing/01_hero.webp" srcset="png/landing/01_hero-800.webp 800w, png/landing/01_hero.webp 1600w" sizes="(max-width: 900px) 100vw, 1180px" width="1600" height="900" alt="Экран выбора режима: «Честный ИИ» и «ИИ-аудитор»" loading="eager" fetchpriority="high" onerror="this.closest('.img-card').classList.add('img-missing')">
     <figcaption class="img-missing-caption">Экран выбора режима (промпт 01)</figcaption>
   </figure>
 </header>
@@ -357,7 +375,7 @@ footer{color:var(--muted)}
     <p class="sec-desc">Как на верстаке: из одних ресурсов выходят разные предметы — решает рецепт. Здесь рецепт — это промпт. Найди, какие слова и правила в запросе заставляют нейросеть не врать.</p>
   </div>
   <figure class="img-card fade" data-lightbox>
-    <img src="png/landing/02_kraft.png" alt="Верстак крафта: документы, промпт, проверка — результат «Честный бот»" loading="lazy" onerror="this.closest('.img-card').classList.add('img-missing')">
+    <img src="png/landing/02_kraft.webp" srcset="png/landing/02_kraft-800.webp 800w, png/landing/02_kraft.webp 1600w" sizes="(max-width: 900px) 100vw, 1180px" width="1600" height="900" alt="Верстак крафта: документы, промпт, проверка — результат «Честный бот»" loading="lazy" decoding="async" onerror="this.closest('.img-card').classList.add('img-missing')">
     <figcaption class="img-missing-caption">Крафт честного ИИ (промпт 02)</figcaption>
   </figure>
   <div class="steps fade">
@@ -378,7 +396,7 @@ footer{color:var(--muted)}
     <p class="sec-desc">В любой школе, клубе и компании — сотни правил. Одно поменяли, другое забыли — и появился «читер»: правило, которое противоречит другому. Выясни, умеет ли нейросеть таких читеров ловить.</p>
   </div>
   <figure class="img-card fade" data-lightbox>
-    <img src="png/landing/03_anticheat.png" alt="Интерфейс шутера: прицел на документе, лента событий с найденным противоречием" loading="lazy" onerror="this.closest('.img-card').classList.add('img-missing')">
+    <img src="png/landing/03_anticheat.webp" srcset="png/landing/03_anticheat-800.webp 800w, png/landing/03_anticheat.webp 1600w" sizes="(max-width: 900px) 100vw, 1180px" width="1600" height="900" alt="Интерфейс шутера: прицел на документе, лента событий с найденным противоречием" loading="lazy" decoding="async" onerror="this.closest('.img-card').classList.add('img-missing')">
     <figcaption class="img-missing-caption">Античит для документов (промпт 03)</figcaption>
   </figure>
 
@@ -422,7 +440,7 @@ footer{color:var(--muted)}
     <p class="sec-desc">С ноября по апрель. Каждые две-три недели — маленькая победа, а не «когда-нибудь в мае».</p>
   </div>
   <figure class="img-card fade" data-lightbox>
-    <img src="png/landing/04_sezon.png" alt="Сезонный пропуск: пять уровней от первых экспериментов до защиты исследования" loading="lazy" onerror="this.closest('.img-card').classList.add('img-missing')">
+    <img src="png/landing/04_sezon.webp" srcset="png/landing/04_sezon-800.webp 800w, png/landing/04_sezon.webp 1600w" sizes="(max-width: 900px) 100vw, 1180px" width="1600" height="900" alt="Сезонный пропуск: пять уровней от первых экспериментов до защиты исследования" loading="lazy" decoding="async" onerror="this.closest('.img-card').classList.add('img-missing')">
     <figcaption class="img-missing-caption">Сезон проекта (промпт 04)</figcaption>
   </figure>
   <ol class="timeline fade">
@@ -479,7 +497,7 @@ footer{color:var(--muted)}
   <p class="small-note fade" style="margin:-4px 0 24px">Выдумок станет заметно меньше, но не ноль — проверь: спроси то, чего в параграфе нет. Насколько меньше и какие слова работают лучше всего — выяснишь в проекте.</p>
 
   <figure class="img-card fade" data-lightbox>
-    <img src="png/landing/05_prokachka.png" alt="Дерево навыков и сундук с наградами за сезон" loading="lazy" onerror="this.closest('.img-card').classList.add('img-missing')">
+    <img src="png/landing/05_prokachka.webp" srcset="png/landing/05_prokachka-800.webp 800w, png/landing/05_prokachka.webp 1600w" sizes="(max-width: 900px) 100vw, 1180px" width="1600" height="900" alt="Дерево навыков и сундук с наградами за сезон" loading="lazy" decoding="async" onerror="this.closest('.img-card').classList.add('img-missing')">
     <figcaption class="img-missing-caption">Прокачка за сезон (промпт 05)</figcaption>
   </figure>
   <div class="grid fade" style="margin-top:24px">
